@@ -10,14 +10,16 @@
 
 
 void handle_sigusr1(int sig) {
-    pid_t sender_pid = getpid();
-    std::cout << "PID: " << sender_pid << std::endl;
+    std::cout << "Sender info: << std::endl;
+    
+    pid_t pid = getpid();
+    std::cout << "PID: " << pid << std::endl;
 
-    uid_t sender_uid = getuid();
-    std::cout << "Sender UID: " << sender_uid << std::endl;
+    uid_t uid = getuid();
+    std::cout << "UID: " << uid << std::endl;
 
-    struct passwd *pw = getpwuid(sender_uid);
-    std::cout << "Sender user name: " << pw->pw_name << std::endl;
+    struct passwd *username = getpwuid(sender_uid);
+    std::cout << "name: " << username->pw_name << std::endl;
 
     ucontext_t context;
     getcontext(&context);
@@ -28,9 +30,8 @@ void handle_sigusr1(int sig) {
 }
 
 int main() {
-
     pid_t pid = getpid();
-    std::cout << "PID: " << pid << std::endl;
+    std::cout << " My PID: " << pid << std::endl;
     signal(SIGUSR1, handle_sigusr1);
 
 
