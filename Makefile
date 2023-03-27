@@ -1,7 +1,7 @@
-all: signal-echo_hw1
+all: main.cpp
 
-signal-echo_hw1: signal-echo_hw1.cpp
-	g++ -o signal-echo_hw1 signal-echo_hw1.cpp
+main.cpp: main.cpp
+	g++ -o main.cpp main.cpp.cpp
 
 clean:
-       rm -f signal-echo_hw1
+       rm -f main.cpp
