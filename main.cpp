@@ -35,7 +35,7 @@ int main() {
     action.sa_sigaction = handle_sigusr1;
 
     if (sigaction(SIGUSR1, &action, NULL) < 0) {
-        std::cerr << errno <<  std::endl;
+        std::cerr << strerror(errno) <<  std::endl;
         exit(errno);
     }
 
