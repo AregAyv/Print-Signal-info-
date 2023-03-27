@@ -1,7 +1,7 @@
-all: main.cpp
+all: Type_signal_info.cpp
 
-main.cpp: main.cpp
-	g++ -o main.cpp main.cpp.cpp
+Type_signal_info.cpp: Type_signal_info.cpp
+	g++ -o Type_signal_info.cpp Type_signal_info.cpp
 
 clean:
-       rm -f main.cpp
+       rm -f Type_signal_info.cpp
